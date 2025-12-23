@@ -1,11 +1,19 @@
-calculadora-online
-│
-├── backend/
-│   ├── app.py
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── index.html
-│   └── script.js
-│
-└── README.md
+function calcular() {
+    fetch("https://calculadora-api.onrender.com/calcular", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            num1: document.getElementById("num1").value,
+            num2: document.getElementById("num2").value,
+            operacao: document.getElementById("operacao").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("resultado").innerText =
+            data.resultado ?? data.erro
+    })
+}
+
