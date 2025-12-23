@@ -1,5 +1,5 @@
 function calcular() {
-    fetch("https://calculadora-api.onrender.com/calcular", {
+    fetch("https://oliverkaiky-dotcom.github.io/Calculadora_online", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
